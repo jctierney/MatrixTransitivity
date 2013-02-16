@@ -40,13 +40,16 @@ namespace MatrixTransitive
         private static void Main(string[] args)
         {
             string fileName;
+            string tryagain = "y";
             Console.WriteLine("Welcome!");
-            Console.WriteLine("Please enter a file name: ");
-            fileName = Console.ReadLine();
-            ParseFile(fileName);
-
-            // Keeps the console alive when running within Visual Studio.
-            Console.ReadKey();
+            while (tryagain == "y" || tryagain == "Y")
+            {
+                Console.WriteLine("Please enter a file name: ");
+                fileName = Console.ReadLine();
+                ParseFile(fileName);
+                Console.WriteLine("Would you like another file (Y/N)?");
+                tryagain = Console.ReadLine();
+            }
         }
 
         /// <summary>
